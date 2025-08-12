@@ -1,0 +1,398 @@
+/* -------- Base / reset -------- */
+*,
+*::before,
+*::after { box-sizing: border-box; }
+
+html, body { margin: 0; padding: 0; }
+
+body{ margin: 0; }
+
+/* -------- Header -------- */
+header{
+    position: relative;
+    min-height: 80vh;           /* au lieu de height fixe */
+    padding: 16px 24px 56px;    /* espace interne pour respirer */
+}
+
+header img, #services img{
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    opacity: 1;
+}
+
+#services img{ height: 100%; }
+
+.overlay{
+    position: absolute;
+    height: 100%;
+    inset: 0;
+    background-color: #1f2a44;
+    opacity: 0.85;
+}
+
+#services>.overlay{ height: 100%; }
+
+h1{
+    font-family: "Anton", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    margin: 120px auto 0;
+    font-size: clamp(32px, 6vw, 120px);  /* responsive */
+    line-height: 1.05;
+    text-align: center;
+    text-transform: uppercase;
+    color:white;
+    transform: translateZ(0);
+}
+
+header ul {
+    position: relative;
+    z-index: 2;
+    display: flex;
+    flex-wrap: wrap;             /* permet le retour à la ligne */
+    margin: 0 3rem 0 0;
+    gap: 28px;
+    font-size: clamp(14px, 2.2vw, 40px);
+    list-style: none;
+    font-family: "Oswald", sans-serif;
+    justify-content: flex-end;
+    font-weight: 700;
+}
+
+header>ul>li{ margin-top: .5rem; }
+
+header>ul>li>a{
+    position: relative;
+    display: inline-block;
+    padding: 8px 0;
+    color:white;
+    text-decoration: none;
+    text-transform: uppercase;
+}
+
+header>ul>li>a::before{
+    content: "";
+    position: absolute;
+    height: 2px;
+    bottom: 0;
+    width: 100%;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.4s ease;
+    background-color: #ffffff;
+    left: 0;
+}
+
+header>ul>li>a:hover::before{ transform: scaleX(1); }
+header>ul>li>a:visited{ color:white; }
+
+header>h2{
+    text-align: center;
+    font-size: clamp(20px, 4.8vw, 100px);
+    font-family: "Oswald", sans-serif;
+    color: #2e7d32;
+    transform: translateZ(0);
+    margin-top: clamp(-8px, -2vw, -50px);
+}
+
+/* -------- À propos -------- */
+#info>h2, #faq>h2{
+    font-family: "Anton", sans-serif;
+    font-size: clamp(28px, 6vw, 80px);
+    text-align: center;
+    color: #1f2a44;
+    text-transform: uppercase;
+    margin: 72px 0 24px;
+}
+
+#info>div{
+    max-width: 1100px;           /* au lieu de width fixe */
+    padding: 0 20px;             /* marge interne sur petits écrans */
+    margin: 0 auto;
+    text-align: center;
+}
+
+#info>div>p{
+    font-family: "Open Sans", sans-serif;
+    font-size: clamp(16px, 2.3vw, 25px);
+    color:#1f2a44;
+}
+
+#info span{
+    font-family: "Open Sans", sans-serif;
+    color: #2e7d32;
+    font-weight: 800;
+    font-size: clamp(17px, 2.4vw, 28px);
+}
+
+/* -------- Services -------- */
+#services{
+    position: relative;
+    min-height: 60vh;            /* plus souple que 1200px */
+    padding: 40px 20px 60px;
+}
+
+#services h2{
+    font-family: "Anton", sans-serif;
+    color: #2e7d32;
+    text-align: center;
+    font-size: clamp(28px, 6vw, 80px);
+    padding-top: 10px;
+    transform: translateZ(0);
+    text-transform: uppercase;
+    margin-bottom: 40px;
+}
+
+#services ul{
+    position: relative;
+    z-index: 1;
+    display: grid;               /* grille responsive */
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: 28px;
+    color:white;
+    text-align: center;
+    transform: translateZ(0);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+#services li {
+    position: relative;
+    list-style: none;
+    border-radius: 20px;
+    z-index: 0;
+    overflow: hidden;
+    padding: 24px 18px;          /* au lieu d’un bloc figé */
+    min-height: 320px;
+}
+
+#services li::before {
+    content: "";
+    position: absolute;
+    inset: 0;
+    background-color: #2e7d32;
+    opacity: 0.70;
+    border-radius: 20px;
+    z-index: -1;
+}
+
+#services h3{
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(18px, 2.8vw, 40px);
+    text-transform: uppercase;
+    margin: 8px 0 12px;
+}
+
+#services p{
+    font-family: "Open Sans", sans-serif;
+    width: 90%;
+    margin: 0 auto;
+    font-size: clamp(14px, 2.2vw, 25px);
+    font-weight: 500;
+}
+
+#services h4{
+    color:white;
+    font-size: clamp(18px, 4.8vw, 75px);
+    margin-top: 48px;
+    text-align: center;
+    font-family: "Oswald", sans-serif;
+    transform: translateZ(0);
+    line-height: 1.2;
+}
+
+/* -------- FAQ -------- */
+#faq>.accordeon{
+    max-width: 1100px;           /* fluide */
+    margin: 0 auto 20px;
+    border: 1px #1f2a44 solid;
+}
+
+#faq>.accordeon>.question{
+    margin-top: 0;
+    font-family: "Oswald", sans-serif;
+    color:white;
+    background-color: #1f2a44;
+    font-size: clamp(16px, 2.6vw, 30px);
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    padding: 12px 14px;
+    margin: 0;
+    cursor: pointer;
+}
+
+#faq>.accordeon>.answer{
+    font-family: "Open Sans", sans-serif;
+    color: #1f2a44;
+    font-size: clamp(14px, 2.2vw, 20px);
+    padding: 12px 14px;
+    display: none;
+}
+
+/* -------- Footer -------- */
+footer{
+    background-color: #2e7d32;
+    color: #ffffff;
+}
+
+footer h4{
+    padding: 20px;
+    font-family: "Oswald", sans-serif;
+    font-size: clamp(20px, 5vw, 60px);
+    text-align: center;
+    margin: 0 auto;
+    max-width: 1200px;
+}
+
+footer ul{
+    list-style: none;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 24px;
+    justify-content: center;
+    margin: 32px auto 0;
+    padding: 0 20px 50px;
+    max-width: 1000px;
+}
+
+footer ul li{
+    font-family: "Open Sans", sans-serif;
+    font-size: clamp(14px, 2.6vw, 30px);
+    display: flex;
+    align-items: center;
+    gap:18px;
+    background: rgba(0,0,0,0.08);
+    border-radius: 16px;
+    padding: 16px 18px;
+}
+
+footer ul li p, footer ul li h5{
+    margin-bottom: 6px;
+    margin-top: 0;
+}
+
+footer img{
+    width: 64px;
+    height: 64px;
+    align-self: center;
+}
+
+h5{ text-transform: uppercase; }
+
+/* -------- Formulaire de contact -------- */
+
+.contact-section {
+    background-color: #f8f8f8;
+    padding: 60px 20px;
+    text-align: center;
+}
+
+.contact-section h2 {
+    font-family: "Anton", sans-serif;
+    color: #1f2a44;
+    font-size: clamp(28px, 6vw, 80px);
+    text-transform: uppercase;
+    margin-bottom: 20px;
+}
+
+.contact-section p {
+    font-family: "Open Sans", sans-serif;
+    font-size: clamp(16px, 2.3vw, 22px);
+    color: #1f2a44;
+    margin-bottom: 40px;
+}
+
+.contact-section form {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.contact-section label {
+    display: block;
+    margin-top: 15px;
+    font-weight: bold;
+    font-family: "Oswald", sans-serif;
+    color: #1f2a44;
+}
+
+.contact-section input,
+.contact-section textarea {
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+}
+
+.contact-section textarea {
+    resize: vertical;
+}
+
+.contact-section button {
+    margin-top: 20px;
+    background-color: #2e7d32;
+    color: white;
+    padding: 14px 24px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: "Oswald", sans-serif;
+    border-radius: 8px;
+    transition: background-color 0.3s ease;
+}
+
+.contact-section button:hover {
+    background-color: #256428;
+}
+
+/* Responsive */
+@media (max-width: 640px) {
+    .contact-section {
+        padding: 40px 12px;
+    }
+}
+
+
+/* =========================
+   Breakpoints
+   ========================= */
+
+/* Tablet (<= 1024px) */
+@media (max-width: 1024px){
+  header{ padding: 16px 16px 48px; }
+  header ul{ justify-content: center; margin-right: 0; gap: 18px; }
+  h1{ margin-top: 80px; }
+  #services ul{ grid-template-columns: repeat(2, minmax(0, 1fr)); }
+}
+
+/* Mobile (<= 640px) */
+@media (max-width: 640px){
+  header{ min-height: 70vh; padding: 12px 14px 40px; }
+  header ul{
+    gap: 12px;
+    font-weight: 600;
+  }
+  h1{ margin-top: 56px; }
+  header>h2{ margin-top: 6px; }
+
+  #services{ padding: 28px 12px 40px; }
+  #services ul{ grid-template-columns: 1fr; gap: 18px; }
+  #services li{ min-height: 0; padding: 18px 14px; }
+
+  #faq>.accordeon{ margin: 0 12px 16px; }
+
+  footer ul{
+    padding: 0 12px 40px;
+    gap: 16px;
+  }
+  footer img{ width: 48px; height: 48px; }
+}
