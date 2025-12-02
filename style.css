@@ -390,8 +390,11 @@ h5{ text-transform: uppercase; }
   #services ul{ grid-template-columns: repeat(2, minmax(0, 1fr)); padding: 0;}
   #services ul > li:nth-child(3) {
   grid-column: 1 / -1;
-  max-width: 480px;
+  max-width: 356px;
   margin: 0 auto;}
+  .service_description{
+    margin-top: 40px;
+  }
   #info>h2, #faq>h2{margin-top: 25px;}
   #faq>.accordeon{    max-width: 90%;    margin: 30px auto;}
 }
