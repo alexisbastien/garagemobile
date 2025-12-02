@@ -132,8 +132,9 @@ header>h2{
 /* -------- Services -------- */
 #services{
     position: relative;
-    min-height: 60vh;            /* plus souple que 1200px */
+    min-height: 60vh;            
     padding: 40px 20px 60px;
+    margin-top: 50px;
 }
 
 #services h2{
@@ -145,6 +146,7 @@ header>h2{
     transform: translateZ(0);
     text-transform: uppercase;
     margin-bottom: 40px;
+    margin-top: 10px;
 }
 
 #services ul{
@@ -206,6 +208,10 @@ header>h2{
 }
 
 /* -------- FAQ -------- */
+#faq{
+    padding-bottom: 40px;
+}
+
 #faq>.accordeon{
     max-width: 1100px;           /* fluide */
     margin: 0 auto 20px;
