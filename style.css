@@ -416,7 +416,7 @@ h5{ text-transform: uppercase; }
     margin: 20px 0 24px;
   }
 
-  #services{ padding: 28px 12px 40px; max-height: 102vh; }
+  #services{ padding: 28px 12px 40px; max-height: 135vh; }
   #services ul{ grid-template-columns: 1fr; gap: 18px; padding: 0; }
   #services li{ min-height: 0; padding: 18px 14px; }
 
