@@ -479,6 +479,281 @@ h5{ text-transform: uppercase; }
 }
 
 
+/* -------- Prise de rendez-vous -------- */
+.rdv-section{
+    background-color: #ffffff;
+    padding: 60px 20px 70px;
+}
+
+.rdv-section h2{
+    font-family: "Anton", sans-serif;
+    color: #1f2a44;
+    text-align: center;
+    font-size: clamp(28px, 6vw, 60px);
+    text-transform: uppercase;
+    margin: 0 0 16px;
+}
+
+.rdv-intro{
+    font-family: "Open Sans", sans-serif;
+    font-size: clamp(16px, 2.3vw, 22px);
+    color: #1f2a44;
+    text-align: center;
+    max-width: 640px;
+    margin: 0 auto 44px;
+}
+
+.rdv-form{
+    max-width: 680px;
+    margin: 0 auto;
+}
+
+.rdv-block{
+    border: none;
+    border-top: 3px solid #eef1f4;
+    padding: 26px 0 6px;
+    margin: 0;
+}
+
+.rdv-block legend{
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    color: #1f2a44;
+    font-size: clamp(17px, 2.4vw, 22px);
+    padding: 0;
+}
+
+.rdv-step{
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    background: #2e7d32;
+    color: #ffffff;
+    font-size: 17px;
+    flex-shrink: 0;
+}
+
+.rdv-hint{
+    font-family: "Open Sans", sans-serif;
+    font-size: 14px;
+    color: #5a6478;
+    margin: 6px 0 16px;
+}
+
+/* Interventions */
+.rdv-interventions{
+    display: grid;
+    gap: 10px;
+}
+
+.rdv-item{
+    display: flex;
+    align-items: center;
+    gap: 14px;
+    padding: 14px 16px;
+    border: 2px solid #eef1f4;
+    border-radius: 12px;
+    cursor: pointer;
+    transition: border-color .2s ease, background-color .2s ease;
+    font-family: "Open Sans", sans-serif;
+    color: #1f2a44;
+}
+
+.rdv-item:hover{ border-color: #cfd6df; }
+
+.rdv-item:has(input:checked){
+    border-color: #2e7d32;
+    background-color: #f1f8f1;
+}
+
+.rdv-item input{
+    width: 20px;
+    height: 20px;
+    accent-color: #2e7d32;
+    flex-shrink: 0;
+    cursor: pointer;
+}
+
+.rdv-item-name{
+    flex: 1;
+    font-weight: 600;
+    font-size: clamp(14px, 2vw, 16px);
+}
+
+.rdv-item-price{
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    font-size: 13px;
+    text-transform: uppercase;
+    letter-spacing: 0.03em;
+    color: #2e7d32;
+    text-align: right;
+    flex-shrink: 0;
+}
+
+/* Estimation */
+.rdv-estimate{
+    display: flex;
+    align-items: baseline;
+    justify-content: space-between;
+    gap: 16px;
+    background: #1f2a44;
+    color: #ffffff;
+    border-radius: 12px;
+    padding: 16px 20px;
+    margin-top: 18px;
+}
+
+.rdv-estimate-label{
+    font-family: "Oswald", sans-serif;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+    font-size: clamp(14px, 2vw, 18px);
+}
+
+.rdv-estimate-value{
+    font-family: "Anton", sans-serif;
+    font-size: clamp(20px, 4vw, 30px);
+    color: #6dd36f;
+    text-align: right;
+}
+
+.rdv-disclaimer{
+    font-family: "Open Sans", sans-serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #5a6478;
+    margin: 12px 2px 0;
+}
+
+/* Créneaux */
+.rdv-slots{
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 14px;
+}
+
+.rdv-slot{ cursor: pointer; }
+
+.rdv-slot input{
+    position: absolute;
+    opacity: 0;
+    pointer-events: none;
+}
+
+.rdv-slot-card{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    padding: 20px 14px;
+    border: 2px solid #eef1f4;
+    border-radius: 12px;
+    text-align: center;
+    transition: border-color .2s ease, background-color .2s ease;
+}
+
+.rdv-slot-card strong{
+    font-family: "Oswald", sans-serif;
+    text-transform: uppercase;
+    font-size: clamp(16px, 2.4vw, 20px);
+    color: #1f2a44;
+}
+
+.rdv-slot-card span{
+    font-family: "Open Sans", sans-serif;
+    color: #5a6478;
+    font-size: 15px;
+}
+
+.rdv-slot:hover .rdv-slot-card{ border-color: #cfd6df; }
+
+.rdv-slot input:checked + .rdv-slot-card{
+    border-color: #2e7d32;
+    background-color: #f1f8f1;
+}
+
+.rdv-slot input:focus-visible + .rdv-slot-card{
+    outline: 3px solid #2e7d32;
+    outline-offset: 2px;
+}
+
+/* Champs */
+.rdv-form label[for]{
+    display: block;
+    margin-top: 14px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    color: #1f2a44;
+}
+
+.rdv-form input[type="text"],
+.rdv-form input[type="tel"],
+.rdv-form input[type="date"]{
+    width: 100%;
+    padding: 12px;
+    margin-top: 6px;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    color: #1f2a44;
+}
+
+.rdv-form input:focus{
+    outline: none;
+    border-color: #2e7d32;
+    box-shadow: 0 0 0 3px rgba(46,125,50,0.15);
+}
+
+.rdv-submit{
+    width: 100%;
+    margin-top: 28px;
+    background-color: #2e7d32;
+    color: #ffffff;
+    padding: 16px 24px;
+    border: none;
+    cursor: pointer;
+    font-size: 18px;
+    font-family: "Oswald", sans-serif;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    border-radius: 8px;
+    transition: background-color .3s ease;
+}
+
+.rdv-submit:hover{ background-color: #256428; }
+.rdv-submit:disabled{ background-color: #9bb89d; cursor: default; }
+
+.rdv-feedback{
+    font-family: "Open Sans", sans-serif;
+    font-size: 16px;
+    text-align: center;
+    margin: 18px 0 0;
+    min-height: 1.4em;
+}
+
+.rdv-feedback.success{ color: #2e7d32; font-weight: 700; }
+.rdv-feedback.error{ color: #b3261e; font-weight: 700; }
+
+.rdv-hp{
+    position: absolute !important;
+    left: -9999px;
+    width: 1px;
+    height: 1px;
+    opacity: 0;
+}
+
 /* =========================
    Breakpoints
    ========================= */
@@ -531,6 +806,11 @@ h5{ text-transform: uppercase; }
     gap: 16px;
   }
   footer img{ width: 48px; height: 48px; }
+
+  .rdv-section{ padding: 40px 14px 50px; }
+  .rdv-slots{ grid-template-columns: 1fr; }
+  .rdv-item{ flex-wrap: wrap; }
+  .rdv-item-price{ width: 100%; text-align: left; padding-left: 34px; }
 
   /* Tableau responsive : passage en cartes */
   #tableau .grid-table {

@@ -36,6 +36,7 @@
                 <li><a href="#services">Prestations</a></li>
                 <li><a href="#tableau">Tarifs</a></li>
                 <li><a href="#faq">Faq</a></li>
+                <li><a href="#rdv">Rendez-vous</a></li>
                 <li><a href="#contact">Contact</a></li>
             </ul>
         <h1>Entretien & réparation <br> automobile</h1>
@@ -128,7 +129,7 @@
       <div class="grid-cell cell-vehicle" data-label="">Tous véhicules</div>
       <div class="grid-cell cell-intervention" data-label="Intervention">Forfait distribution </div>
       <div class="grid-cell cell-details" data-label="Détails">Kit de distribution, pompe à eau et liquide de refroidissement </div>
-      <div class="grid-cell cell-price" data-label="Tarif">À partir de 450 € TTC</div>
+      <div class="grid-cell cell-price" data-label="Tarif">À partir de 380 € TTC</div>
     </div>
   </div>
         <p style="font-style: italic;     font-family: 'Open Sans', sans-serif; color: #1f2a44;margin-bottom: 0;    text-align: center;">Afin de garantir un diagnostic fiable et professionnel, aucun diagnostic n’est réalisé par téléphone. Toute recherche de panne nécessite une intervention et est <span style="font-weight:700;text-decoration:underline">facturée.</span></p>
@@ -160,6 +161,64 @@
 
     </div>
 
+    <div id="rdv" class="rdv-section">
+        <h2>Prendre rendez-vous</h2>
+        <p class="rdv-intro">Choisissez vos interventions et un créneau, laissez votre numéro&nbsp;: je vous rappelle pour confirmer.</p>
+
+        <form id="rdv-form" class="rdv-form" novalidate>
+
+            <fieldset class="rdv-block">
+                <legend><span class="rdv-step">1</span> Interventions souhaitées</legend>
+                <p class="rdv-hint">Cochez une ou plusieurs interventions.</p>
+                <div id="rdv-interventions" class="rdv-interventions"></div>
+
+                <div class="rdv-estimate">
+                    <span class="rdv-estimate-label">Estimation</span>
+                    <span class="rdv-estimate-value" id="rdv-estimate-value">—</span>
+                </div>
+                <p class="rdv-disclaimer">Estimation indicative et <strong>non contractuelle</strong>. Le tarif définitif est confirmé après diagnostic. Les interventions «&nbsp;sur devis&nbsp;» ne sont pas comptées dans ce total.</p>
+            </fieldset>
+
+            <fieldset class="rdv-block">
+                <legend><span class="rdv-step">2</span> Date</legend>
+                <input type="date" id="rdv-date" name="date" required>
+                <p class="rdv-hint">Du lundi au vendredi, sur rendez-vous.</p>
+            </fieldset>
+
+            <fieldset class="rdv-block">
+                <legend><span class="rdv-step">3</span> Créneau</legend>
+                <div class="rdv-slots">
+                    <label class="rdv-slot">
+                        <input type="radio" name="slot" value="matin" required>
+                        <span class="rdv-slot-card">
+                            <strong>Matin</strong>
+                            <span>10h&nbsp;–&nbsp;13h</span>
+                        </span>
+                    </label>
+                    <label class="rdv-slot">
+                        <input type="radio" name="slot" value="apresmidi" required>
+                        <span class="rdv-slot-card">
+                            <strong>Après-midi</strong>
+                            <span>14h&nbsp;–&nbsp;16h</span>
+                        </span>
+                    </label>
+                </div>
+            </fieldset>
+
+            <fieldset class="rdv-block">
+                <legend><span class="rdv-step">4</span> Vos coordonnées</legend>
+                <label for="rdv-name">Nom</label>
+                <input type="text" id="rdv-name" name="name" autocomplete="name" required>
+                <label for="rdv-phone">Téléphone</label>
+                <input type="tel" id="rdv-phone" name="phone" inputmode="tel" autocomplete="tel" placeholder="06 12 34 56 78" required>
+                <input type="text" name="_gotcha" class="rdv-hp" tabindex="-1" autocomplete="off" aria-hidden="true">
+            </fieldset>
+
+            <button type="submit" class="rdv-submit">Demander ce rendez-vous</button>
+            <p class="rdv-feedback" id="rdv-feedback" role="status" aria-live="polite"></p>
+        </form>
+    </div>
+
     <footer>
         <div id="questions">
             <h3>
@@ -176,7 +235,7 @@
         <h2>Contactez-moi</h2>
         <p>Vous pouvez m’envoyer un message directement via ce formulaire :</p>
 
-        <form action="https://formspree.io/f/xrbljeln" method="POST">
+        <form action="https://formspree.io/f/xvkpykjw" method="POST">
             <label for="name">Nom :</label>
             <input type="text" id="name" name="name" required>
 
