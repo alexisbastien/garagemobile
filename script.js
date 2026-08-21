@@ -41,15 +41,15 @@ questions.forEach((question, index) => {
    Prise de rendez-vous
    ========================= */
 
-// Endpoint Google Apps Script (remplace l'URL /exec obtenue après déploiement de Code.gs)
-const ENDPOINT_RDV = "https://script.google.com/macros/s/AKfycbyBhTZjhs8efcbOrx0X_AFuv7gSeit1ibcordIuYS0bdjKiQJggGh-v0KIn2kZWOso/exec";
+// Endpoint PHP hébergé sur OVH (domaine technique), site statique sur GitHub Pages
+const ENDPOINT_RDV = "https://mobiley.cluster129.hosting.ovh.net/rdv.php";
 
 // Liste des interventions. price = null => "sur devis" (non compté dans l'estimation)
 const INTERVENTIONS_RDV = [
     { id: "pneus",        label: "Montage pneumatiques",            price: 16  },
     { id: "diag",         label: "Diagnostic électronique",         price: 35  },
     { id: "vidange",      label: "Vidange",                         price: 120 },
-    { id: "distribution", label: "Forfait distribution",            price: 450 },
+    { id: "distribution", label: "Forfait Kit distribution",        price: 380 },
     { id: "freins",       label: "Freinage (plaquettes / disques)", price: null },
     { id: "embrayage",    label: "Embrayage",                       price: null },
     { id: "fap",          label: "Régénération FAP",                price: null },
@@ -140,7 +140,7 @@ if (rdvForm) {
         try {
             const res = await fetch(ENDPOINT_RDV, {
                 method: "POST",
-                headers: { "Content-Type": "text/plain;charset=utf-8" }, // évite le preflight CORS bloqué par Apps Script
+                headers: { "Content-Type": "application/json" },
                 body: JSON.stringify(payload),
             });
             const data = await res.json().catch(() => ({}));
