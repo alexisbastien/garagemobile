@@ -46,7 +46,6 @@ const ENDPOINT_RDV = "https://mobiley.cluster129.hosting.ovh.net/rdv.php";
 
 // Liste des interventions. price = null => "sur devis" (non compté dans l'estimation)
 const INTERVENTIONS_RDV = [
-    { id: "pneus",        label: "Montage pneumatiques",            price: 16  },
     { id: "diag",         label: "Diagnostic électronique",         price: 35  },
     { id: "vidange",      label: "Vidange",                         price: 120 },
     { id: "distribution", label: "Forfait Kit distribution",        price: 380 },
